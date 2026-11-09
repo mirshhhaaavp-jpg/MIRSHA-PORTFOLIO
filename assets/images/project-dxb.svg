@@ -1,0 +1,58 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg_dxb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040905"/>
+      <stop offset="50%" stop-color="#0c1d12"/>
+      <stop offset="100%" stop-color="#05120a"/>
+    </linearGradient>
+    <radialGradient id="glow_dxb" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#a3e635" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#22c55e" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#040905" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="neon_line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a3e635"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg_dxb)"/>
+  <rect width="800" height="500" fill="url(#glow_dxb)"/>
+  
+  <!-- Architectural futuristic grid & lines -->
+  <g stroke="rgba(163, 230, 53, 0.15)" stroke-width="1">
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="440" x2="800" y2="440"/>
+    <line x1="0" y1="470" x2="800" y2="470"/>
+    <!-- Perspective converging lines -->
+    <line x1="400" y1="200" x2="0" y2="500"/>
+    <line x1="400" y1="200" x2="200" y2="500"/>
+    <line x1="400" y1="200" x2="400" y2="500"/>
+    <line x1="400" y1="200" x2="600" y2="500"/>
+    <line x1="400" y1="200" x2="800" y2="500"/>
+  </g>
+
+  <!-- Futuristic Dubai Skyline / Geometric Innovation Pavilion -->
+  <polygon points="120,350 180,240 240,350" fill="rgba(163, 230, 53, 0.08)" stroke="rgba(163, 230, 53, 0.4)" stroke-width="1.5"/>
+  <polygon points="260,350 340,160 420,350" fill="rgba(34, 197, 94, 0.12)" stroke="#a3e635" stroke-width="2"/>
+  <polygon points="440,350 510,210 580,350" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5"/>
+  <polygon points="560,350 630,260 700,350" fill="rgba(163, 230, 53, 0.06)" stroke="rgba(163, 230, 53, 0.3)" stroke-width="1.5"/>
+
+  <!-- Neural Sphere / AI Core -->
+  <circle cx="340" cy="160" r="45" fill="none" stroke="url(#neon_line)" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="340" cy="160" r="25" fill="rgba(163, 230, 53, 0.2)"/>
+  <circle cx="340" cy="160" r="8" fill="#ffffff"/>
+
+  <!-- Glowing Badges / HUD Elements -->
+  <rect x="50" y="45" width="130" height="32" rx="16" fill="rgba(0, 0, 0, 0.6)" stroke="#a3e635" stroke-width="1"/>
+  <circle cx="68" cy="61" r="5" fill="#a3e635"/>
+  <text x="82" y="66" fill="#a3e635" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1">DXB iHUB</text>
+
+  <rect x="620" y="45" width="130" height="32" rx="16" fill="rgba(0, 0, 0, 0.6)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="640" y="66" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="11" font-weight="500">AI VISUALS • 2026</text>
+
+  <!-- Title overlay inside artwork -->
+  <text x="60" y="420" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="28" font-weight="800">Dxb iHub</text>
+  <text x="60" y="445" fill="#a3e635" font-family="-apple-system, sans-serif" font-size="14" font-weight="500">AI Visual Direction &amp; Innovation Branding Campaign</text>
+</svg>

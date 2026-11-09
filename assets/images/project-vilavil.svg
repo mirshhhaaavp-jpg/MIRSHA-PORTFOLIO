@@ -1,0 +1,49 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg_vila" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1009"/>
+      <stop offset="50%" stop-color="#182312"/>
+      <stop offset="100%" stop-color="#090e07"/>
+    </linearGradient>
+    <radialGradient id="gold_spot" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#a3e635" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0b1009" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottle_glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.4)"/>
+      <stop offset="30%" stop-color="rgba(251, 191, 36, 0.2)"/>
+      <stop offset="70%" stop-color="rgba(163, 230, 53, 0.3)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.5)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg_vila)"/>
+  <rect width="800" height="500" fill="url(#gold_spot)"/>
+
+  <!-- Luxury Podium / Pedestal -->
+  <ellipse cx="400" cy="370" rx="190" ry="24" fill="#070c06" stroke="rgba(251, 191, 36, 0.4)" stroke-width="1.5"/>
+  <ellipse cx="400" cy="365" rx="180" ry="20" fill="rgba(163, 230, 53, 0.1)"/>
+
+  <!-- High-end luxury bottle / product silhouette -->
+  <rect x="350" y="160" width="100" height="180" rx="16" fill="url(#bottle_glass)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+  <rect x="375" y="125" width="50" height="35" rx="4" fill="#fbbf24" stroke="#ffffff" stroke-width="1.5"/>
+  <rect x="388" y="105" width="24" height="20" rx="2" fill="#e2e8f0"/>
+
+  <!-- Light refraction beams -->
+  <line x1="330" y1="120" x2="260" y2="400" stroke="rgba(251, 191, 36, 0.15)" stroke-width="40" stroke-linecap="round"/>
+  <line x1="470" y1="120" x2="540" y2="400" stroke="rgba(163, 230, 53, 0.15)" stroke-width="40" stroke-linecap="round"/>
+
+  <!-- Product Label -->
+  <rect x="365" y="210" width="70" height="80" rx="6" fill="rgba(10, 16, 11, 0.85)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="400" y="245" fill="#ffffff" font-family="Georgia, serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="2">VILA</text>
+  <text x="400" y="265" fill="#fbbf24" font-family="Georgia, serif" font-size="10" font-weight="400" text-anchor="middle" letter-spacing="3">VIL</text>
+
+  <!-- Badges -->
+  <rect x="50" y="45" width="150" height="32" rx="16" fill="rgba(0, 0, 0, 0.6)" stroke="#fbbf24" stroke-width="1"/>
+  <circle cx="68" cy="61" r="5" fill="#fbbf24"/>
+  <text x="82" y="66" fill="#fbbf24" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1">VILAVIL LUXURY</text>
+
+  <!-- Title overlay inside artwork -->
+  <text x="60" y="420" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="28" font-weight="800">VILAVIL</text>
+  <text x="60" y="445" fill="#fbbf24" font-family="-apple-system, sans-serif" font-size="14" font-weight="500">Cinematic AI Product Content &amp; Luxury Commercials</text>
+</svg>
