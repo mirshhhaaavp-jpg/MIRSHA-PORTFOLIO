@@ -108,10 +108,10 @@ function initPhotoManager() {
   const savedHeroPhoto = localStorage.getItem('mirsha_hero_photo');
   const savedAboutPhoto = localStorage.getItem('mirsha_about_photo');
 
-  if (savedHeroPhoto && heroImg && !savedHeroPhoto.includes('.svg')) {
+  if (savedHeroPhoto && savedHeroPhoto.startsWith('data:image') && heroImg) {
     heroImg.src = savedHeroPhoto;
   }
-  if (savedAboutPhoto && aboutImg && !savedAboutPhoto.includes('.svg')) {
+  if (savedAboutPhoto && savedAboutPhoto.startsWith('data:image') && aboutImg) {
     aboutImg.src = savedAboutPhoto;
   }
 
@@ -213,9 +213,9 @@ function initPhotoManager() {
     resetBtn.addEventListener('click', () => {
       localStorage.removeItem('mirsha_hero_photo');
       localStorage.removeItem('mirsha_about_photo');
-      heroImg.src = 'assets/images/mirsha-photo.jpg';
-      aboutImg.src = 'assets/images/mirsha-photo.jpg';
-      showToast('Reset to Mirsha’s photo');
+      heroImg.src = 'assets/images/mirsha-photo.png';
+      aboutImg.src = 'assets/images/mirsha-photo.png';
+      showToast('Reset to Mirsha Portrait');
       photoModal.classList.remove('active');
     });
   }
