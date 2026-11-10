@@ -108,10 +108,10 @@ function initPhotoManager() {
   const savedHeroPhoto = localStorage.getItem('mirsha_hero_photo');
   const savedAboutPhoto = localStorage.getItem('mirsha_about_photo');
 
-  if (savedHeroPhoto && heroImg) {
+  if (savedHeroPhoto && heroImg && !savedHeroPhoto.includes('.svg')) {
     heroImg.src = savedHeroPhoto;
   }
-  if (savedAboutPhoto && aboutImg) {
+  if (savedAboutPhoto && aboutImg && !savedAboutPhoto.includes('.svg')) {
     aboutImg.src = savedAboutPhoto;
   }
 
@@ -213,9 +213,9 @@ function initPhotoManager() {
     resetBtn.addEventListener('click', () => {
       localStorage.removeItem('mirsha_hero_photo');
       localStorage.removeItem('mirsha_about_photo');
-      heroImg.src = 'assets/images/hero-silhouette.svg';
-      aboutImg.src = 'assets/images/about-portrait.svg';
-      showToast('Reset to original theme visuals');
+      heroImg.src = 'assets/images/mirsha-photo.jpg';
+      aboutImg.src = 'assets/images/mirsha-photo.jpg';
+      showToast('Reset to Mirsha’s photo');
       photoModal.classList.remove('active');
     });
   }
