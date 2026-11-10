@@ -247,42 +247,40 @@ body {
   margin-bottom: 4rem;
 }
 
-.hero-main-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: center;
-  min-height: 520px;
-  padding: 3.5rem 4.5rem 3.5rem 4.5rem;
-  position: relative;
-  z-index: 2;
-  gap: 3rem;
-}
-
-/* Left Hero Column */
-.hero-left-col {
+/* Hero Centered Layout */
+.hero-centered-layout {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  z-index: 3;
+  text-align: center;
+  padding: 3.5rem 2rem 4rem 2rem;
+  position: relative;
+  z-index: 2;
+  gap: 2rem;
+}
+
+.hero-top-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-greeting {
   color: var(--lime-soft);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: -0.01em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-main-title {
-  font-size: 4.8rem;
+  font-size: 4.6rem;
   font-weight: 800;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.035em;
   color: var(--text-white);
-  margin-bottom: 2rem;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
 }
 
 .hero-work-btn {
@@ -293,10 +291,10 @@ body {
   border: 1px solid rgba(163, 230, 53, 0.35);
   color: var(--text-white);
   text-decoration: none;
-  padding: 0.65rem 1.35rem;
+  padding: 0.75rem 1.6rem;
   border-radius: var(--radius-pill);
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   backdrop-filter: blur(12px);
   transition: all var(--transition-fast);
 }
@@ -304,7 +302,7 @@ body {
 .hero-work-btn:hover {
   background: rgba(28, 52, 35, 0.9);
   border-color: var(--lime-primary);
-  box-shadow: 0 0 20px var(--lime-glow);
+  box-shadow: 0 0 25px var(--lime-glow);
   transform: translateY(-2px);
 }
 
@@ -329,7 +327,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 100%;
 }
 
 .center-spotlight {
@@ -337,8 +335,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 440px;
-  height: 440px;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, rgba(163, 230, 53, 0.22) 0%, rgba(35, 65, 45, 0.15) 50%, rgba(0, 0, 0, 0) 75%);
   border-radius: 50%;
   pointer-events: none;
@@ -350,12 +348,12 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 430px;
+  max-width: 440px;
   aspect-ratio: 1 / 1;
   border-radius: 28px;
   background: var(--bg-surface);
   border: 1px solid var(--border-glass);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(163, 230, 53, 0.15);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 40px rgba(163, 230, 53, 0.18);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -366,7 +364,7 @@ body {
 .hero-square-frame:hover {
   transform: translateY(-4px);
   border-color: rgba(163, 230, 53, 0.45);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(163, 230, 53, 0.25);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9), 0 0 50px rgba(163, 230, 53, 0.28);
 }
 
 .hero-frame-inner {
@@ -381,7 +379,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 12%;
   display: block;
   transition: transform var(--transition-slow);
 }
@@ -393,7 +391,7 @@ body {
 .hero-square-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(7, 14, 9, 0.5) 0%, rgba(7, 14, 9, 0) 40%, rgba(7, 14, 9, 0.1) 100%);
+  background: linear-gradient(to top, rgba(7, 14, 9, 0.45) 0%, rgba(7, 14, 9, 0) 35%, rgba(7, 14, 9, 0.1) 100%);
   pointer-events: none;
 }
 
@@ -413,6 +411,13 @@ body {
   align-items: center;
   gap: 0.45rem;
   z-index: 3;
+}
+
+.hero-bottom-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
 }
 
 /* Quick Photo Customizer Action */
@@ -1808,8 +1813,15 @@ body {
     gap: 1rem;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
   }
+  .hero-centered-layout {
+    padding: 2.5rem 1rem 3rem 1rem;
+    gap: 1.5rem;
+  }
   .hero-main-title {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
+  }
+  .hero-square-frame {
+    max-width: 310px;
   }
   .services-grid, .why-grid, .projects-grid {
     grid-template-columns: 1fr;
