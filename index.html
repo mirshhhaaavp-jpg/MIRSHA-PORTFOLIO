@@ -65,19 +65,16 @@
             </a>
           </div>
 
-          <!-- Center Column: Square Photo Frame -->
+          <!-- Center Column: Creator Cutout Portrait (Centered, No frames, Full photo) -->
           <div class="hero-center-col">
             <div class="center-spotlight"></div>
-            <div class="hero-square-frame">
-              <div class="hero-square-badge">
-                <span class="pulse-dot"></span> AI Content Creator
-              </div>
-              <img id="heroCreatorImg" src="assets/images/mirsha-photo.png" alt="Mirsha VP - AI Content Creator" class="hero-square-img">
-              <button class="photo-edit-trigger trigger-photo-modal" title="Click to replace with your photo">
-                📷 Change Photo
-              </button>
+            <div class="hero-cutout-container">
+              <img id="heroCreatorImg" src="assets/images/mirsha-cutout.png" alt="Mirsha VP - AI Content Creator" class="hero-cutout-img">
             </div>
           </div>
+
+          <!-- Right Column Spacer (Ensures Center Column is in the exact center) -->
+          <div class="hero-right-spacer" aria-hidden="true"></div>
 
         </div>
 
@@ -102,7 +99,7 @@
               <div class="about-top-pill">
                 <span class="pulse-dot"></span> Graphic Design &amp; AI Creation
               </div>
-              <img id="aboutCreatorImg" src="assets/images/mirsha-photo.png" alt="Mirsha VP Portrait">
+              <img id="aboutCreatorImg" src="assets/images/mirsha-about.jpg" alt="Mirsha VP Portrait">
               <div class="about-overlay-bottom">
                 <div class="overlay-meta">
                   <h3>Mirsha VP</h3>
@@ -203,6 +200,7 @@
 
           <!-- Service 1: AI Content Creation -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-ai-content.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">01</span>
@@ -225,6 +223,7 @@
 
           <!-- Service 2: Meta Ads -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-meta-ads.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">02</span>
@@ -247,6 +246,7 @@
 
           <!-- Service 3: Social Media Marketing -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-social-media.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">03</span>
@@ -269,6 +269,7 @@
 
           <!-- Service 4: AI Video Production -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-ai-video.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">04</span>
@@ -291,6 +292,7 @@
 
           <!-- Service 5: Video Editing -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-video-editing.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">05</span>
@@ -313,6 +315,7 @@
 
           <!-- Service 6: Vibe Coding -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-vibe-coding.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">06</span>
@@ -335,6 +338,7 @@
 
           <!-- Service 7: AI Product Content -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-ai-product.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">07</span>
@@ -357,6 +361,7 @@
 
           <!-- Service 8: AI Advertising -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-ai-advertising.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">08</span>
@@ -379,6 +384,7 @@
 
           <!-- Service 9: Prompt Engineering -->
           <div class="service-card">
+            <div class="service-card-bg" style="background-image: url('assets/images/service-prompt-engineering.jpg');"></div>
             <div>
               <div class="service-card-top">
                 <span class="service-index">09</span>
@@ -609,41 +615,57 @@
            ========================================================================== -->
       <section id="projects" class="section-wrapper">
         <div class="section-header-compact">
-          <span class="section-pill-tag">✦ Featured Projects</span>
-          <h2 class="section-title">Portfolio &amp; Client Work</h2>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.25rem;">
+            <div>
+              <span class="section-pill-tag">✦ Featured Projects</span>
+              <h2 class="section-title">Portfolio &amp; Client Work</h2>
+            </div>
+            <!-- Category Filter Tabs (Food, Healthcare, Jewelry, Burger, Monster, Donut) -->
+            <div class="portfolio-filter-tabs">
+              <button class="filter-tab-btn active" data-filter="all">All Projects</button>
+              <button class="filter-tab-btn" data-filter="food">Food</button>
+              <button class="filter-tab-btn" data-filter="healthcare">Healthcare</button>
+              <button class="filter-tab-btn" data-filter="jewelry">Jewelry</button>
+              <button class="filter-tab-btn" data-filter="burger">Burger</button>
+              <button class="filter-tab-btn" data-filter="monster">Monster</button>
+              <button class="filter-tab-btn" data-filter="donut">Donut</button>
+            </div>
+          </div>
         </div>
 
         <div class="projects-grid">
 
-          <!-- Project 1: Dxb iHub -->
-          <div class="project-card" data-project="dxb">
+          <!-- Project 1: Food & Beverage Video Commercial -->
+          <div class="project-card" data-project="food" data-category="food">
             <div class="project-thumb">
-              <span class="project-pill-tag">Innovation Branding</span>
-              <img src="assets/images/project-dxb.svg" alt="Dxb iHub AI Visual Direction">
+              <span class="project-pill-tag">Food &amp; Beverage</span>
+              <video src="assets/videos/food.mp4" muted loop playsinline autoplay class="project-video-preview"></video>
+              <div class="project-play-badge">▶ Video Preview</div>
             </div>
             <div class="project-body">
               <div>
-                <h3 class="project-title">Dxb iHub</h3>
+                <h3 class="project-title">Food &amp; Beverage Commercial</h3>
                 <p class="project-summary">
-                  Comprehensive AI visual direction, synthetic worldbuilding, and high-impact digital identity for Dubai's premier innovation ecosystem.
+                  Mouthwatering culinary visual storytelling, cinematic food reels, dynamic macro lighting, and viral social media advertising.
                 </p>
               </div>
               <div class="project-footer-row">
                 <div class="project-tags-row">
+                  <span class="mini-tag">Food Video</span>
+                  <span class="mini-tag">Commercial</span>
                   <span class="mini-tag">AI Cinema</span>
-                  <span class="mini-tag">Kling AI</span>
-                  <span class="mini-tag">Branding</span>
                 </div>
                 <span class="project-inspect-btn">↗</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: Accubate Health Care -->
-          <div class="project-card" data-project="accubate">
+          <!-- Project 2: Accubate Health Care (Healthcare Option with Video) -->
+          <div class="project-card" data-project="accubate" data-category="healthcare">
             <div class="project-thumb">
               <span class="project-pill-tag">Healthcare &amp; Ads</span>
-              <img src="assets/images/project-accubate.svg" alt="Accubate Health Care Visuals">
+              <video src="assets/videos/healthcare.mp4" muted loop playsinline autoplay class="project-video-preview" poster="assets/images/project-accubate.svg"></video>
+              <div class="project-play-badge">▶ Video Preview</div>
             </div>
             <div class="project-body">
               <div>
@@ -654,33 +676,109 @@
               </div>
               <div class="project-footer-row">
                 <div class="project-tags-row">
+                  <span class="mini-tag">Healthcare</span>
                   <span class="mini-tag">Meta Ads</span>
-                  <span class="mini-tag">Storytelling</span>
-                  <span class="mini-tag">Medical</span>
+                  <span class="mini-tag">AI Video</span>
                 </div>
                 <span class="project-inspect-btn">↗</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 3: VILAVIL -->
-          <div class="project-card" data-project="vilavil">
+          <!-- Project 3: Jewelry (Sapphire & Diamond Luxury Commercial) -->
+          <div class="project-card" data-project="jewelry" data-category="jewelry">
             <div class="project-thumb">
-              <span class="project-pill-tag">Luxury Commercial</span>
-              <img src="assets/images/project-vilavil.svg" alt="VILAVIL Product Cinema">
+              <span class="project-pill-tag">Jewelry &amp; Luxury</span>
+              <video src="assets/videos/jewelry.mp4" muted loop playsinline autoplay class="project-video-preview"></video>
+              <div class="project-play-badge">▶ Video Preview</div>
             </div>
             <div class="project-body">
               <div>
-                <h3 class="project-title">VILAVIL</h3>
+                <h3 class="project-title">Luxury Jewelry Commercial</h3>
                 <p class="project-summary">
-                  Cinematic AI product visuals, luxury commercial reels, and photorealistic synthetic lighting simulating high-budget physical film sets.
+                  Cinematic AI jewelry modeling, photorealistic sapphire &amp; diamond light refractions, high-fashion styling, and luxury commercial storytelling.
                 </p>
               </div>
               <div class="project-footer-row">
                 <div class="project-tags-row">
-                  <span class="mini-tag">Flow AI</span>
-                  <span class="mini-tag">Product Video</span>
-                  <span class="mini-tag">Luxury</span>
+                  <span class="mini-tag">Jewelry Video</span>
+                  <span class="mini-tag">Luxury Brand</span>
+                  <span class="mini-tag">AI Cinema</span>
+                </div>
+                <span class="project-inspect-btn">↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Burger (Assembling Layers Commercial) -->
+          <div class="project-card" data-project="burger" data-category="burger">
+            <div class="project-thumb">
+              <span class="project-pill-tag">Gourmet Burger</span>
+              <video src="assets/videos/burger.mp4" muted loop playsinline autoplay class="project-video-preview"></video>
+              <div class="project-play-badge">▶ Video Preview</div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Gourmet Burger Commercial</h3>
+                <p class="project-summary">
+                  Dynamic slow-motion layer assembly, appetizing sizzle &amp; texture simulation, macro food cinematography, and viral promotional reels.
+                </p>
+              </div>
+              <div class="project-footer-row">
+                <div class="project-tags-row">
+                  <span class="mini-tag">Burger Video</span>
+                  <span class="mini-tag">Commercial</span>
+                  <span class="mini-tag">AI Cinema</span>
+                </div>
+                <span class="project-inspect-btn">↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Monster Energy Commercial (High-Energy Beverage Cinema) -->
+          <div class="project-card" data-project="monster" data-category="monster">
+            <div class="project-thumb">
+              <span class="project-pill-tag">Energy Drink</span>
+              <video src="assets/videos/monster.mp4" muted loop playsinline autoplay class="project-video-preview"></video>
+              <div class="project-play-badge">▶ Video Preview</div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Monster Energy Commercial</h3>
+                <p class="project-summary">
+                  Electrifying high-octane visual effects, liquid splash simulations, dynamic can condensation, and cinematic commercial video reels.
+                </p>
+              </div>
+              <div class="project-footer-row">
+                <div class="project-tags-row">
+                  <span class="mini-tag">Monster Energy</span>
+                  <span class="mini-tag">Commercial</span>
+                  <span class="mini-tag">AI Cinema</span>
+                </div>
+                <span class="project-inspect-btn">↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Premium Donut (Veloure Pâtisserie Commercial) -->
+          <div class="project-card" data-project="donut" data-category="donut">
+            <div class="project-thumb">
+              <span class="project-pill-tag">Artisan Bakery</span>
+              <video src="assets/videos/donut.mp4" muted loop playsinline autoplay class="project-video-preview"></video>
+              <div class="project-play-badge">▶ Video Preview</div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Premium Donut Commercial</h3>
+                <p class="project-summary">
+                  Velvety chocolate drizzle, golden artisan dough textures, powdered sugar cascades, and mouthwatering luxury pâtisserie visual cinema.
+                </p>
+              </div>
+              <div class="project-footer-row">
+                <div class="project-tags-row">
+                  <span class="mini-tag">Premium Donut</span>
+                  <span class="mini-tag">Commercial</span>
+                  <span class="mini-tag">AI Cinema</span>
                 </div>
                 <span class="project-inspect-btn">↗</span>
               </div>
@@ -692,7 +790,7 @@
 
       <!-- ==========================================================================
            TESTIMONIALS SECTION
-           Featuring quote from prompt: "Very creative, professional, and easy to work with."
+           Featuring quote: "Great experience working together. Excellent creativity, attention to detail, and professional results."
            ========================================================================== -->
       <section id="testimonials" class="section-wrapper">
         <div class="section-header-compact">
@@ -707,7 +805,7 @@
             <div>
               <div class="quote-mark">“</div>
               <blockquote class="testimonial-main-quote">
-                “Very creative, professional, and easy to work with.”
+                “Great experience working together. Excellent creativity, attention to detail, and professional results.”
               </blockquote>
             </div>
 
@@ -717,25 +815,6 @@
                 <h4>Creative Director</h4>
                 <p>Collaborator &amp; Brand Partner — Dxb iHub Project</p>
               </div>
-            </div>
-          </div>
-
-          <!-- Side Mini Testimonials -->
-          <div class="testimonial-side-list">
-            <div class="mini-testimonial-card">
-              <div class="stars-row">★★★★★</div>
-              <p class="mini-quote">
-                “Mirsha brought our health care narrative to life with incredible sensitivity and cutting-edge visual quality. Our Meta Ad conversions saw an immediate lift.”
-              </p>
-              <span class="mini-client-author">Head of Marketing, Accubate Health</span>
-            </div>
-
-            <div class="mini-testimonial-card">
-              <div class="stars-row">★★★★★</div>
-              <p class="mini-quote">
-                “The luxury product commercials created for VILAVIL looked like a million-dollar studio shoot. Phenomenal prompt engineering and motion control.”
-              </p>
-              <span class="mini-client-author">Product Lead, VILAVIL</span>
             </div>
           </div>
 
@@ -798,46 +877,6 @@
                 </a>
 
               </div>
-            </div>
-
-            <!-- Right Column: Interactive Inquiry Form -->
-            <div class="contact-form-panel">
-              <form id="portfolioContactForm">
-                <div class="form-group">
-                  <label for="contactName" class="form-label">Your Name</label>
-                  <input type="text" id="contactName" class="form-input" placeholder="e.g. Sarah Jenkins" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="contactEmail" class="form-label">Your Email</label>
-                  <input type="email" id="contactEmail" class="form-input" placeholder="name@company.com" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="contactServiceSelect" class="form-label">Service Needed</label>
-                  <select id="contactServiceSelect" class="form-select">
-                    <option value="AI Content Creation">AI Content Creation</option>
-                    <option value="Meta Ads">Meta Ads</option>
-                    <option value="Social Media Marketing">Social Media Marketing</option>
-                    <option value="AI Video Production">AI Video Production</option>
-                    <option value="Video Editing">Video Editing</option>
-                    <option value="Vibe Coding">Vibe Coding</option>
-                    <option value="AI Product Content">AI Product Content</option>
-                    <option value="AI Advertising">AI Advertising</option>
-                    <option value="Prompt Engineering">Prompt Engineering</option>
-                    <option value="General Collaboration">General Creative Collaboration</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="contactMessage" class="form-label">Project Details</label>
-                  <textarea id="contactMessage" class="form-textarea" placeholder="Tell me about your project, timeline, and vision..."></textarea>
-                </div>
-
-                <button type="submit" class="form-submit-btn">
-                  Send Message Directly <span>➔</span>
-                </button>
-              </form>
             </div>
 
           </div>

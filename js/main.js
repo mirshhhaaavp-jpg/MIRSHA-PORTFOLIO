@@ -6,7 +6,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   initCursorGlow();
   initNavigation();
+  initHeroAnimation();
   initPhotoManager();
+  initServicesAnimation();
+  initPortfolioFilters();
   initProjectModals();
   initServiceBooking();
   initCopyActions();
@@ -104,15 +107,14 @@ function initPhotoManager() {
   const photoPresetBtns = document.querySelectorAll('.photo-preset-btn');
   const resetBtn = document.getElementById('resetPhotoBtn');
 
-  // Load saved custom photo from localStorage if present
-  const savedHeroPhoto = localStorage.getItem('mirsha_hero_photo');
-  const savedAboutPhoto = localStorage.getItem('mirsha_about_photo');
-
-  if (savedHeroPhoto && savedHeroPhoto.startsWith('data:image') && heroImg) {
-    heroImg.src = savedHeroPhoto;
+  // Always display the official transparent cutout in the hero section and new street portrait in About section
+  localStorage.removeItem('mirsha_hero_photo');
+  localStorage.removeItem('mirsha_about_photo');
+  if (heroImg) {
+    heroImg.src = 'assets/images/mirsha-cutout.png';
   }
-  if (savedAboutPhoto && savedAboutPhoto.startsWith('data:image') && aboutImg) {
-    aboutImg.src = savedAboutPhoto;
+  if (aboutImg) {
+    aboutImg.src = 'assets/images/mirsha-about.jpg';
   }
 
   // Modal open/close
@@ -213,9 +215,9 @@ function initPhotoManager() {
     resetBtn.addEventListener('click', () => {
       localStorage.removeItem('mirsha_hero_photo');
       localStorage.removeItem('mirsha_about_photo');
-      heroImg.src = 'assets/images/mirsha-photo.png';
-      aboutImg.src = 'assets/images/mirsha-photo.png';
-      showToast('Reset to Mirsha Portrait');
+      heroImg.src = 'assets/images/mirsha-cutout.png';
+      aboutImg.src = 'assets/images/mirsha-about.jpg';
+      showToast('Reset to original photo');
       photoModal.classList.remove('active');
     });
   }
@@ -226,6 +228,21 @@ function initPhotoManager() {
    Data for Dxb iHub, Accubate Health Care, and VILAVIL
    ========================================================================== */
 const projectData = {
+  food: {
+    title: 'Food & Beverage Commercial — Gourmet Culinary Visuals',
+    category: 'Food & Beverage Commercial Cinema',
+    client: 'Culinary Brand & Gourmet Hospitality',
+    video: 'assets/videos/food.mp4',
+    image: 'assets/images/project-dxb.svg',
+    summary: 'High-speed food cinematography, appetizing slow-motion sequences, and cinematic culinary visual storytelling engineered to drive engagement and taste appeal.',
+    strategy: 'Combined dynamic fluid and food textures with macro camera motion control, capturing rich colors, steam, and sizzle with studio-grade color grading.',
+    tools: ['AI Video Production', 'CapCut', 'Photoshop', 'Kling AI', 'Meta Ads'],
+    results: [
+      'Over 1.8M organic views across Instagram & TikTok reels',
+      '48% higher viewer retention rate with macro visual hooks',
+      'Engineered multi-format assets for social ads and digital branding'
+    ]
+  },
   dxb: {
     title: 'Dxb iHub — AI Visual Direction & Brand Identity',
     category: 'AI Visual Direction & Brand Architecture',
@@ -245,6 +262,7 @@ const projectData = {
     category: 'Healthcare Visuals & Social Advertising',
     client: 'Accubate Health Care',
     image: 'assets/images/project-accubate.svg',
+    video: 'assets/videos/healthcare.mp4',
     summary: 'High-trust, compassionate visual storytelling developed for a specialized healthcare and wellness network, communicating complex patient care empathetically.',
     strategy: 'Engineered precision prompts focused on microscopic cellular aesthetics, warm human clinical interactions, and patient recovery journeys without sterile medical tropes.',
     tools: ['ChatGPT Prompt Engineering', 'Seedance', 'Nano Banana', 'CapCut', 'Photoshop'],
@@ -252,6 +270,66 @@ const projectData = {
       '3.8x increase in patient consultation bookings via Meta Ads',
       'Recognized for human-first medical creative design',
       'Delivered 35+ high-performing vertical reels and poster assets'
+    ]
+  },
+  jewelry: {
+    title: 'Luxury Jewelry Commercial — Sapphire & Diamond Cinema',
+    category: 'Haute Joaillerie & Luxury Jewelry Commercial',
+    client: 'Fine Jewelry & Luxury Brand',
+    video: 'assets/videos/jewelry.mp4',
+    image: 'assets/images/project-vilavil.svg',
+    summary: 'Ultra-luxury high-fashion jewelry commercial featuring sapphire and diamond modeling, photorealistic gemstones, exquisite studio light refractions, and cinematic slow-motion pacing.',
+    strategy: 'Engineered advanced synthetic lighting and fluid motion prompts using Flow and Kling AI to capture facet reflections, diamond brilliance, and natural human model expressions.',
+    tools: ['Kling AI', 'Flow', 'Photoshop', 'CapCut', 'Meta Ads'],
+    results: [
+      '3.2x higher return on ad spend across high-ticket jewelry campaigns',
+      'Over 1.5M video views with exceptional engagement and luxury brand recall',
+      'Adopted across e-commerce hero banners, social ads, and boutique displays'
+    ]
+  },
+  burger: {
+    title: 'Gourmet Burger Commercial — Dynamic Layer Assembly',
+    category: 'Gourmet Fast Food & Commercial Cinema',
+    client: 'Gourmet Burger Brand',
+    video: 'assets/videos/burger.mp4',
+    image: 'assets/images/project-dxb.svg',
+    summary: 'Cinematic slow-motion gourmet burger commercial highlighting fresh artisan ingredients, succulent flame-grilled patties, melting cheddar, and gravity-defying layer assembly on the plate.',
+    strategy: 'Utilized state-of-the-art AI video physics, fluid and steam simulation, and macro motion control to craft high-impact appetizing visual hooks designed for viral social ad sets.',
+    tools: ['Kling AI', 'CapCut', 'Photoshop', 'Seedance', 'Meta Ads'],
+    results: [
+      '2.1M+ viral views across Instagram Reels & YouTube Shorts',
+      '44% boost in customer conversion rates for limited-edition menu launch',
+      'Engineered multi-angle vertical and horizontal cinematic commercials'
+    ]
+  },
+  monster: {
+    title: 'Monster Energy Commercial — High-Octane Beverage Cinema',
+    category: 'Energy Drink & Commercial Cinema',
+    client: 'Monster Energy Campaign',
+    video: 'assets/videos/monster.mp4',
+    image: 'assets/images/project-dxb.svg',
+    summary: 'High-energy commercial spot combining liquid splash dynamics, condensation droplets, kinetic motion graphics, and neon visual storytelling designed for viral brand impact.',
+    strategy: 'Leveraged generative fluid physics and high-speed motion camera tracking to simulate hyper-realistic energy drink pours, ice eruptions, and dynamic lighting.',
+    tools: ['Kling AI', 'Flow', 'Photoshop', 'CapCut', 'Meta Ads'],
+    results: [
+      '3.4M+ cross-platform video views with high viewer retention',
+      '52% higher engagement compared to static beverage ad creatives',
+      'Optimized multi-ratio video exports for vertical reels and horizontal displays'
+    ]
+  },
+  donut: {
+    title: 'Veloure Pâtisserie — Premium Artisan Donut Commercial',
+    category: 'Gourmet Bakery & Luxury Pâtisserie Commercial',
+    client: 'Veloure Pâtisserie & Bakery',
+    video: 'assets/videos/donut.mp4',
+    image: 'assets/images/project-dxb.svg',
+    summary: 'Decadent slow-motion pâtisserie commercial highlighting warm golden brioche dough, glossy artisan glaze cascades, rich chocolate swirls, and powdered sugar dusting.',
+    strategy: 'Engineered macro culinary visual prompts using Kling AI and Flow, capturing ultra-fine sugar particles, liquid glaze viscosity, and warm bakery lighting to stimulate sensory appeal.',
+    tools: ['Kling AI', 'Flow', 'Photoshop', 'CapCut', 'Meta Ads'],
+    results: [
+      '2.8M+ viral video views on Instagram Reels and TikTok',
+      '47% increase in foot traffic and online bakery orders during campaign',
+      'Engineered high-converting vertical video ad sets with 3.6x ROAS'
     ]
   },
   vilavil: {
@@ -270,6 +348,33 @@ const projectData = {
   }
 };
 
+/* ==========================================================================
+   4. PORTFOLIO CATEGORY FILTERS (Includes 'Healthcare' Option)
+   ========================================================================== */
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-tab-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      projectCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => { card.style.opacity = '1'; }, 10);
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => { card.style.display = 'none'; }, 200);
+        }
+      });
+    });
+  });
+}
+
 function initProjectModals() {
   const modal = document.getElementById('projectDetailsModal');
   const modalContent = document.getElementById('projectModalBody');
@@ -282,10 +387,16 @@ function initProjectModals() {
       const data = projectData[projectId];
       if (!data) return;
 
+      const mediaHtml = data.video
+        ? `<div style="border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid rgba(163,230,53,0.3); background: #000;">
+             <video src="${data.video}" controls autoplay playsinline style="width: 100%; max-height: 420px; display: block; border-radius: 16px; background: #000;"></video>
+           </div>`
+        : `<div style="border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1); background: #000;">
+             <img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto; max-height: 320px; object-fit: cover;">
+           </div>`;
+
       modalContent.innerHTML = `
-        <div style="border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1); background: #000;">
-          <img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto; max-height: 320px; object-fit: cover;">
-        </div>
+        ${mediaHtml}
         <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
           <span style="background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.4); color: #a3e635; font-size: 0.75rem; padding: 0.25rem 0.65rem; border-radius: 9999px; font-weight: 600;">
             ${data.category}
@@ -333,7 +444,7 @@ function initProjectModals() {
           </ul>
         </div>
         <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
-          <a href="#contact" onclick="document.getElementById('projectDetailsModal').classList.remove('active')" 
+          <a href="#contact" onclick="document.getElementById('projectDetailsModal').classList.remove('active'); const v = document.getElementById('projectDetailsModal').querySelector('video'); if (v) v.pause();" 
              style="background: #a3e635; color: #0c160e; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; font-weight: 700; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 0.5rem;">
             Inquire Similar Project ↗
           </a>
@@ -344,12 +455,18 @@ function initProjectModals() {
     });
   });
 
+  function stopModalMedia() {
+    modal.classList.remove('active');
+    const vid = modal.querySelector('video');
+    if (vid) vid.pause();
+  }
+
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    closeBtn.addEventListener('click', stopModalMedia);
   }
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('active');
+    if (e.target === modal) stopModalMedia();
   });
 }
 
@@ -471,4 +588,82 @@ function initSkillBarAnimation() {
   if (skillsPanel) {
     observer.observe(skillsPanel);
   }
+}
+
+/* ==========================================================================
+   9. HERO INTERACTIVE PARALLAX ANIMATION
+   Smooth 3D cursor tracking for spotlight & cutout portrait
+   ========================================================================== */
+function initHeroAnimation() {
+  const heroCanvas = document.querySelector('.hero-canvas');
+  const cutoutImg = document.querySelector('.hero-cutout-img');
+  const spotlight = document.querySelector('.center-spotlight');
+
+  if (!heroCanvas || !cutoutImg || window.innerWidth < 992) return;
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  heroCanvas.addEventListener('mousemove', (e) => {
+    const rect = heroCanvas.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) - 0.5;
+    const y = ((e.clientY - rect.top) / rect.height) - 0.5;
+    mouseX = x * 18;
+    mouseY = y * 14;
+  });
+
+  heroCanvas.addEventListener('mouseleave', () => {
+    mouseX = 0;
+    mouseY = 0;
+  });
+
+  function tick() {
+    currentX += (mouseX - currentX) * 0.08;
+    currentY += (mouseY - currentY) * 0.08;
+
+    if (cutoutImg) {
+      cutoutImg.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+    }
+    if (spotlight) {
+      spotlight.style.transform = `translate(-50%, -50%) translate3d(${currentX * 1.6}px, ${currentY * 1.6}px, 0)`;
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+/* ==========================================================================
+   10. SPECIALIZED SERVICES ANIMATION & SPOTLIGHT TRACKING
+   Scroll reveal with staggered cascading entrance + reactive cursor spotlight
+   ========================================================================== */
+function initServicesAnimation() {
+  const servicesGrid = document.querySelector('.services-grid');
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  if (!servicesGrid) return;
+
+  // 1. Scroll-triggered reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        servicesGrid.classList.add('is-visible');
+        observer.unobserve(servicesGrid);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  observer.observe(servicesGrid);
+
+  // 2. Cursor spotlight tracking on each card
+  serviceCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 }
